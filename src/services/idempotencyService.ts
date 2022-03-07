@@ -109,7 +109,11 @@ export class IdempotencyService {
                         const conflictError = new Error(
                             'A previous request is still in progress for this key.'
                         );
-                        res.status(HttpStatus.CONFLICT);
+                        res.status(HttpStatus.CONFLICT).send({
+                            code: HttpStatus.CONFLICT,
+                            message: conflictError.message,
+                            payload: null,
+                        });
                         next(conflictError);
                     }
                 } else {
@@ -117,7 +121,11 @@ export class IdempotencyService {
                     const invalidIntentError = new Error(
                         'Misuse of the idempotency key. Please check your request.'
                     );
-                    res.status(HttpStatus.EXPECTATION_FAILED);
+                    res.status(HttpStatus.EXPECTATION_FAILED).send({
+                        code: HttpStatus.EXPECTATION_FAILED,
+                        message:invalidIntentError.message,
+                        payload: null,
+                    });
                     next(invalidIntentError);
                 }
             } else {
