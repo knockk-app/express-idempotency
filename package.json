@@ -2,8 +2,8 @@
   "name": "express-idempotency",
   "version": "1.0.51",
   "description": "",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "src/index.js",
+  "typings": "src/index.d.ts",
   "scripts": {
     "compile": "./node_modules/.bin/tsc --build tsconfig.dist.json",
     "test": "./node_modules/.bin/tsc --build tsconfig.test.json && nyc mocha",
