@@ -114,7 +114,7 @@ export class IdempotencyService {
                             message: conflictError.message,
                             payload: null,
                         });
-                        next(conflictError);
+                        next(null);
                     }
                 } else {
                     // Invalid intent. Client must correct his request.
@@ -126,7 +126,7 @@ export class IdempotencyService {
                         message:invalidIntentError.message,
                         payload: null,
                     });
-                    next(invalidIntentError);
+                    next(null);
                 }
             } else {
                 // No resource, so initiate the idempotency process

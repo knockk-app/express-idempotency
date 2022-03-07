@@ -112,7 +112,7 @@ let IdempotencyService = class IdempotencyService {
                                 message: conflictError.message,
                                 payload: null,
                             });
-                            next(conflictError);
+                            next(null);
                         }
                     }
                     else {
@@ -123,7 +123,7 @@ let IdempotencyService = class IdempotencyService {
                             message: invalidIntentError.message,
                             payload: null,
                         });
-                        next(invalidIntentError);
+                        next(null);
                     }
                 }
                 else {
