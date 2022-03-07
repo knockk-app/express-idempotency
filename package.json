@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VilledeMontreal/express-idempotency"
+    "url": "git+https://github.com/knockk-app/express-idempotency.git"
   },
   "keywords": [
     "express",
